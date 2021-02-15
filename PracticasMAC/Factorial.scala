@@ -1,6 +1,8 @@
-def FactorialNatural(x: Int): Int = {
-	if(x==1 || x==0) 1
-	else x* Factorial(x-1)
+def FactorialNatural(x: Int): Any = {
+	if( x < 0) "Pruebe con FactorialEntero"
+	else
+		if(x==1 || x==0) 1
+		else x* Factorial(x-1)
 }
 
 def FactorialEntero(x: Int): Int = {

@@ -1,0 +1,1 @@
+def suma2(x: Double) = x+1
