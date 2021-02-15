@@ -1,0 +1,1 @@
+def suma3(x: Double, y: Double, z: Double) = x+y+z
