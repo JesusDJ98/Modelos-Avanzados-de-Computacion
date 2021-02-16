@@ -1,2 +1,2 @@
-def suma(x: Double, y: Double) = x+y
+def suma(x: Double, y: Double = 0) = x+y
 
