@@ -1,3 +1,9 @@
+def suma2(x: Double, y: Double = 1) = x+y
+
+
+//No es lo que realmente se me pide -> Pero es bastante interesante
+
+
 def suma2(x: Double) = {
 	(y: Double) => {x + y}
 }
