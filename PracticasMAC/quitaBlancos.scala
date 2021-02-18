@@ -1,5 +1,5 @@
-def quitaBlancos(x: List[Char]) = {
-	var x1: List[Char] = List()
+def quitaBlancos(x: String) = {
+	var x1: String = ""
 	for(l <- x){
 		if(l == ' ') 0
 		else x1 = x1 :+ l
@@ -8,8 +8,11 @@ def quitaBlancos(x: List[Char]) = {
 }
 
 /*
-scala> quitaBlancos(List('a',' ','2', ' ', ' ','3','c'))
-val res61: List[Char] = List(a, 2, 3, c)
+scala> quitaBlancos(str)
+val res82: String = AAaaBab
+
+scala> str
+val res83: String = AA aa B a b
 */
 
 def quitaBlancos2(x: List[Any]) = {

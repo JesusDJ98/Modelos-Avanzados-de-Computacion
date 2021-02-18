@@ -1,6 +1,6 @@
 /* Este me muestra basura
 def miFuncion(implicit c: List[Double], l: List[Double])= {
-	if(c.length == 0) l
+	if(c.isEmpty) l
 	else{
 		for(x <- c){
 			var l2: List[Double] = List()
@@ -19,7 +19,7 @@ def miFuncion(implicit c: List[Double], l: List[Double])= {
 
 def miFuncion(l: List[Double], c: List[Double]= List(0.0) )= {
 	var c1 = c
-	if(c.length == 0) c1 = List(0.0)
+	if(c.isEmpty) c1 = List(0.0)
 
 	for(x <- c1){
 		var l2: List[Double] = List()

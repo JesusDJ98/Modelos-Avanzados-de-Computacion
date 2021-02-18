@@ -11,3 +11,8 @@ def enviar(x: Double) ={
 	if(x == 0) "Error"
 } 
 */
+
+/*
+En Scala solo hay alias para tipos de variables
+def factorial(m: Int, x: Int = (m-1)):
+*/

@@ -1,6 +1,6 @@
 def funcSolMap(y: List[Double], x: List[Double] = List(0) ) = {
 	var x1 = x
-	if(x.length == 0) x1 = List(0)
+	if(x.isEmpty) x1 = List(0)
 
 	var Salida: List[Double] = List()
 	var cont = 0
@@ -18,7 +18,7 @@ def funcSolMap(y: List[Double], x: List[Double] = List(0) ) = {
 }
 
 def suma3L(x: Double = 0, y: List[Double] = List()) = {
-	if(y.length == 0) y
+	if(y.isEmpty) y
 	else{
 		var l2: List[Double] = List()
 		for(valor <- y){

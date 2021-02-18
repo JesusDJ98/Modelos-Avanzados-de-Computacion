@@ -1,8 +1,8 @@
 def sumaListaR(l: List[Double], total: Double = 0): Double = {
 
-	if(l.length == 0) total
+	if(l.isEmpty) total
 	else{
-		var total2 = l(0)+total
+		var total2 = l.head+total
 		//println("Entro con un total de: "+total+" con una cantidad de: "+l.length)
 		sumaListaR(eliminaCabeza(l), total2)
 	}
