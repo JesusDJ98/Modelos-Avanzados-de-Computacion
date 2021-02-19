@@ -33,19 +33,16 @@ class Entrada(Persona: String, Edad: Int, Telefono: String) {
 scala> Listin
 val res23: List[Entrada] = List((Yo, 22, 789878987), (Tu, 22, 343543234), (Yo2, 22, 789878986))
 
-
 */
 
 
 
 
 def encontrarR(l: List[Entrada], b: (String, Int) ): String = {
-	//println(l)
 	if(l.isEmpty) "No encontrado"
 	else{
 		var x = l.head.getPersona
 		var comp = new Entrada(x, b._2, b._1)
-		//println("Lo que comparo: "+comp.toString+" vs Head: "+l.head)
 		if(l.head.comparar(comp)) x
 		else encontrarR(l.tail, (b._1, b._2) )
 	}
