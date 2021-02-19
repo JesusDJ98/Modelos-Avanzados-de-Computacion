@@ -13,7 +13,11 @@ class Entrada(Persona: String, Edad: Int, Telefono: String) {
 	def getTel = tel
 
 	def comparar(x: Entrada) = {
+		/* Esta comparacion es absoluta, es decir, es identicamente igual.(Apuntan al mismo objeto)
 		if(x == this) true
+		else false*/
+
+		if( (this.getPersona == x.getPersona) & (this.getEdad == x.getEdad) & (this.getTel == x.getTel) ) true
 		else false
 	}
 
@@ -32,89 +36,59 @@ val res23: List[Entrada] = List((Yo, 22, 789878987), (Tu, 22, 343543234), (Yo2, 
 
 */
 
-def encontrar(l: List[Entrada], b: (String, Int) ) = {
-	/* // Funciona pero con warnings
-	var comp = new Entrada("daIgual", b._2, b._1)
-	l.foreach{
-		case comp => println("Encontrado")
-		case _ => println("Nada")
+
+
+
+def encontrarR(l: List[Entrada], b: (String, Int) ): String = {
+	//println(l)
+	if(l.isEmpty) "No encontrado"
+	else{
+		var x = l.head.getPersona
+		var comp = new Entrada(x, b._2, b._1)
+		//println("Lo que comparo: "+comp.toString+" vs Head: "+l.head)
+		if(l.head.comparar(comp)) x
+		else encontrarR(l.tail, (b._1, b._2) )
 	}
-	*/
+}
+/* Salida:
+scala> encontrarR(Listin, (X2.getTel, 21) )
+val res111: String = No encontrado
 
-	//Igual pero con bucle
+scala> encontrarR(Listin, (X.getTel, X.getEdad) )
+val res112: String = Yo
 
+scala> encontrarR(Listin, (X2.getTel, X2.getEdad) )
+val res113: String = Yo2
+*/
+
+
+
+
+def encontrar(l: List[Entrada], b: (String, Int) ): String = {
 	var encontrado = false
+	var cant = 0
 	var devolver = ""
-	for( x <- l){
-		val tupla = (x.getEdad, X.getTel)
-		tupla match{
-			case (b._2, b._1) => {
-				encontrado = true
-				devolver = devolver + tupla.getPersona + " "
-			}
-			case _ =>
-		}
+	while(cant < l.length & !encontrado){
+		var x = l(cant)
+		var y = new Entrada(x.getPersona, b._2, b._1)
+		if(x.comparar(y)){
+			encontrado = true
+			devolver = x.getPersona
+		}else cant = cant +1
 	}
-	if(encontrado) devolver = "NADA"
+	if(!encontrado) "No encontrado"
 	else devolver
-				
+}		
+/* Salida:
+scala> encontrar(Listin, (X.getTel, X.getEdad))
+val res119: String = Yo
 
+scala> encontrar(Listin, (X2.getTel, X2.getEdad))
+val res120: String = Yo2
 
-	//Con Filtro
-	//l.filter( Entrada(_, a, b) == Entrada(_, b._2, b._1) )
-}
+scala> encontrar(Listin, (X2.getTel, 23))
+val res121: String = No encontrado
 
-
-
-
-def encontrar(l: List[Entrada], b: (String, Int) ) = {
-	l.foreach{
-		case Entrada(_, b._2, b._1) => println("Encontrado")
-		case _ => println("Nada")
-	}
-}
-
-def compara(x: Entrada, b: (String, Int)) : Boolean = {
-	println(x)
-	println(new Entrada(x.getPersona, b._2, b._1))
-	if(x == new Entrada(x.getPersona, b._2, b._1) ) true
-	else false
-}
-
-
-
-
-
-def encontrar(l: List[Entrada], b: (String, Int) ) = {
-	var encontrado = false
-	var devolver = ""
-	for( x <- l){
-		var tupla = (x.getEdad, X.getTel)
-		println("Estudio: "+ tupla)
-		tupla match{
-			case (b._2, b._1) => {
-				encontrado = true
-				devolver = devolver + x.getPersona + " "
-				println(devolver)
-			}
-			case _ =>
-		}
-	}
-	if(encontrado) devolver = "NADA"
-	else devolver
-}
-
-
-
-def encontrar(l: List[Entrada], b: (String, Int) ) = {
-	var encontrado = false
-	var devolver = ""
-	for( x <- l){
-		println("Estudio: "+x.toString )
-		var tupla = (x.getEdad, X.getTel)
-		println("Estudio: "+ tupla)
-		
-	}
-	if(encontrado) devolver = "NADA"
-	else devolver
-}
+scala> encontrar(List(), (X2.getTel, 23))
+val res122: String = No encontrado
+*/
