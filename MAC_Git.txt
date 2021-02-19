@@ -30,7 +30,7 @@ Sesion 4:	3							--> Hecho
 Sesion 5:	2							--> Hecho
 Sesion 6:	5							--> Hecho
 Sesion 7:	8							--> Hecho
-Sesion 8: 	mapea_y_filtra_ricardo_diaz.hs +  divisores_ricardo.hs	--> NO Hecho
+Sesion 8: 	mapea_y_filtra_ricardo_diaz.hs +  divisores_ricardo.hs	--> Hecho
 sesion 9:	3 (integral)						--> NO Hecho
 Sesion 10:	3 euler + 1 funcionHash					--> NO Hecho
 Sesion 11:	4							--> NO Hecho
