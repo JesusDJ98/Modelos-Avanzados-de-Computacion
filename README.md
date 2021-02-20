@@ -19,7 +19,7 @@ Sesion 11:	4					<br>
 Compañeros:	2(mapea_y_filtra_ricardo_diaz.hs +  divisores_ricardo.hs)<br>	
 	*Total: 40*<br>
 <br>
-Total conteo:	40		<br>
+Total conteo:	48		<br>
 txt:			3	<br>
 md:			2	<br>
 jpg:			1<br>
@@ -29,7 +29,7 @@ Total no necesario:	8<br>
 	*Total: 40*<br>
 
 
-**Mi Organizacion:**<br><br>
+**Mi Organizacion:**<br>
 Adapto el github del profesor, a lo que hay en los videos de ls clases grabadas <br><br>
 Sesion 2:	7							<br>
 Sesion 3:	3							<br>
