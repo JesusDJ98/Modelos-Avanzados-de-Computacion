@@ -135,14 +135,26 @@ def evaluaciones(y: List[Double], x: List[Double => Double]) = {
 	}
 	aux
 }
+/*
+scala> evaluaciones(List(2,3,2), List(math.pow(_,3), _*2))
+val res21: List[Any] = List(List(8.0, 4.0), List(27.0, 6.0), List(8.0, 4.0))
+*/
 
 
 
 
+def evaluaciones2(y: List[Double], x: Double => Double) = {
+	var aux: List[Double] = List()
+	for(a <- y) aux = aux :+ x(a)
+	aux
+}
+/* Salida:
+scala> evaluaciones2(List(2,3), (_*2.0))
+val res74: List[Double] = List(4.0, 6.0)
 
-
-
-
+scala> evaluaciones2(List(2,3), _*2.0)
+val res75: List[Double] = List(4.0, 6.0)
+*/
 
 
 
