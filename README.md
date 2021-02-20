@@ -3,7 +3,7 @@ Realización de la práctica de la asignatura de MAC de ingeniería informática
 
 
 
-#Distribucion
+# Distribucion
 Organizacion del GitHub de: https://github.com/jcarpio/mac2021
 
 Cantidad de ejercicios
