@@ -1,3 +1,4 @@
+//Trabajando con listas
 def miFuncion(l: List[Double], c: List[Double]= List(0.0) )= {
 	var c1 = c
 	var l1 = l
@@ -62,4 +63,40 @@ val res23: List[Double] = List(4.0, 6.0)
 
 scala> miFuncionR(List(2,3), List(2,3,4,5,32))
 val res24: List[Double] = List(4.0, 6.0, 4.0, 5.0, 32.0)
+*/
+
+
+//Funcion de orden superior
+def miFuncion_2(f: Double => Double, c: List[Double]) = {
+	var devolver: List[Any] = List()
+	for(x <- c) devolver = devolver :+ f(x)
+	devolver		
+}
+/* Salida:
+scala> miFuncion_2(_+2, List(-1,2,3,2,345,22,0))
+val res1: List[Any] = List(1.0, 4.0, 5.0, 4.0, 347.0, 24.0, 2.0)
+*/
+
+
+
+
+def miFuncion_21(f: Double => Boolean, c: List[Double]) = {
+	var devolver: List[Any] = List()
+	for(x <- c) devolver = devolver :+ f(x)
+	devolver		
+}
+/*Salida:
+scala> miFuncion_21(_<2, List(-1,2,3,2,345,22,0))
+val res2: List[Any] = List(true, false, false, false, false, false, true)
+*/
+
+
+def miFuncion_22(f: Double => Boolean, c: List[Double]) = {
+	var devolver: List[Any] = List()
+	for(x <- c) if(f(x)) devolver = devolver :+ x
+	devolver		
+}
+/* Salida:
+scala> miFuncion_22(_<2, List(-1,2,3,2,345,22,0))
+val res3: List[Any] = List(-1.0, 0.0)
 */

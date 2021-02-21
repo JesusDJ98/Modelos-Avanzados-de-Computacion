@@ -1,3 +1,4 @@
+//Trabajo con Listas
 def miFuncion2(l: List[Double], c: List[Double]= List(0.0) )= {
 	var c1 = c
 	if (c.isEmpty ) c1 = List(0)
@@ -27,11 +28,7 @@ val res32: List[List[Double]] = List(List(2.0, 3.0, 4.0, 2.0))
 */
 
 
-/* Esto no es lo que se pide, pero aqui me he centrado en trabajar con listas, ya en las sesiones superiores,
-ya trabajare mas a fondo con las funciones de orden superior, pero para que no haya ningun problema luego con la nota,
-tambien pondre aqui abajo lo que realmente se pide en esta parte
-*/
-
+//Funciones de Orden superior
 def miFuncion22(l: List[Double => Double], c: List[Double]) = {
 	var devolver: List[Any] = List()
 	
@@ -52,10 +49,7 @@ val res43: List[Any] = List(List(6.0, 9.0, 12.0, 15.0), List(4.0, 5.0, 6.0, 7.0)
 //Trabajando con map
 def miFuncion23(l: List[Double => Double], c: List[Double]) = {
 	var devolver: List[Any] = List()
-	for(f <- l){
-		devolver = devolver :+ c.map(f)
-	}
-	//l.foreach { devolver = devolver :+ c.map(this) }
+	for(f <- l) devolver = devolver :+ c.map(f)
 	devolver		
 }
 /* Salida:

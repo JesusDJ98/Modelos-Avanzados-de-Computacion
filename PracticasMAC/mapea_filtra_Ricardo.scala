@@ -17,14 +17,14 @@ def filtra(x: Any => Boolean, l: List[Any]) = {
 	}
 	aux
 }
+
+//Igual a miFuncion_22 --> Para ver la diferencia entre este y el filtra con Any
 def filtra2(x: Double => Boolean, l: List[Double]) = {
 	var aux: List[Any] = List()
-	for(a <- l){
-		if( x(a) ) aux = aux :+ a	
-	}
+	for(a <- l) if( x(a) ) aux = aux :+ a
 	aux
 }
-/* Salida: comprueba(Any)
+/* Salida: 
 scala> filtra(_!=1, List(1,2,3,2,23,8,1,1,4))
 val res105: List[Any] = List(2, 3, 2, 23, 8, 4)
 
@@ -79,13 +79,12 @@ val res163: List[Any] = List(5.0)
 
 
 
-// Mapea
+// Mapea con orden superior
 def mapea(x: Double => Double, l: List[Double]) = {
 	var aux: List[Any] = List()
 	for(a <- l) aux = aux :+ x(a)
 	aux
 }
-
 /* Salida:
 scala> c
 val res166: List[Double] = List(2.0, 4.0, 5.0, 2.0, 23.0, 54.0, 99.0)
@@ -102,6 +101,25 @@ val res168: List[Any] = List(1.0, 2.0, 2.5, 1.0, 11.5, 27.0, 49.5)
 */
 
 
+// Mapea con orden superior y map
+def mapea2(x: Double => Double, l: List[Double]) = l.map(x)
+/*
+scala> mapea2(_*2, List(2,3,2,4,10))
+val res4: List[Double] = List(4.0, 6.0, 4.0, 8.0, 20.0)
+
+scala> mapea2(math.pow(_,3), List(2,3,2,4,10))
+val res6: List[Double] = List(8.0, 27.0, 8.0, 64.0, 1000.0)
+*/
+
+
+
+def mapea3(x: Any => Boolean, l: List[Any]) = l.map(x)
+/* Salida:
+scala> mapea3(_!=2, List(2,3,2,4,10))
+val res15: List[Boolean] = List(false, true, false, true, true)
+*/
+
+
 
 def doble(x: Double) = x*2
 def triple(x: Double) = x*3
@@ -114,17 +132,27 @@ val res172: Double = 8.0
 */
 
 
+//Devolver funcion
+def doble2() = (x: Double) => x*2
+def triple3() = (x: Double) => x*3
+/* Salida:
+scala> mapea2(doble2(), List(2,3,2,4,10))
+val res17: List[Double] = List(4.0, 6.0, 4.0, 8.0, 20.0)
 
+scala> mapea2(triple2(), List(2,3,2,4,10))
+val res18: List[Double] = List(6.0, 9.0, 6.0, 12.0, 30.0)
 
+scala> doble2()(4)
+val res19: Double = 8.0
 
-
-/*
-Esto es lo mismo que se nos pide en el script miFuncion
-Pero como es de la sesion 4, y en ese momento no tenia los conocimientos para hacerlo,
-dejo este como sustituto del script miFuncion, y dejo mi script de miFuncion tal cual,
-pues asi vale como más ejercicio de listas.
-Y esta sesion que se centre más en ejercicios de funciones de orden superior y map
+scala> triple2()(4)
+val res20: Double = 12.0
 */
+
+
+
+
+//Muy parecido a miFuncion2
 def evaluaciones(y: List[Double], x: List[Double => Double]) = {
 	var aux: List[Any] = List()
 	for(a <- y){

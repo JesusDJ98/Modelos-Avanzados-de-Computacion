@@ -1,6 +1,6 @@
 def soloprimero(x: Any, y: Any) = x
 //Con evaluacion perezosa
-def soloprimero3(x: Any, y => Any) = x
+def soloprimero3(x: Any, y: => Any) = x
 
 def soloprimero1(x: String) = x.head
 def soloprimero2(x: List[Any]) = x.head
