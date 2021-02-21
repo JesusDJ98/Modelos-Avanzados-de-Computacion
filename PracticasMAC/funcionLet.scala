@@ -23,10 +23,3 @@ val res200: java.io.Serializable = List()
 scala> funcionLet(List(List(2,3,2,4,2,5), List("asdf","fgh"), List(2, 43, 456,654,32,23,65), List(23, ' ', "a")))
 val res199: java.io.Serializable = List(List(2, 43, 456, 654, 32, 23, 65), List(23,  , a))
 */
-
-/*
-funcionLet2 es lo mismo
-Pues en haskell se diferencia entre Array[] y Listas()
-Pero en scala poniendo una lista de any, podemos tener array que funcionan igual
-que las listas de haskell, es decir, que cada elemento puede ser de un tipo diferente.
-*/

@@ -40,61 +40,45 @@ Tarda MUCHISIMO
 
 
 
-/* Planteamiento:
 
-Cojo los 100 primeros primos, y busco el primero que sea capaz de reducir el numero al que deseamos conocer la lista de divisores.
-Y busco desde 1 hasta x/primerPrimo, por loq tardaremos menos
-Y luego rellenare la tabla, dividiendo el x original por cada elemento de la Lista de divisores encontrados
-es decir, seria orden O(n) (peor caso 32, bucar el primo divisor) + O(n/primo) + O(2n) (Rellenar el array)
-*/
-def divisores2(x: Double) = {
-	var lPrimos = List(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97)
-	var encontrado = false
-	var inicio = 0
-	while(!encontrado & inicio<lPrimos.length){
-		if(x%lPrimos(inicio) == 0) encontrado = true
-		else inicio += 1
+//Mejora de la implementacion
+def euler3_2(x: Double, salida: Double = 1, veces: Int = 0): Double = {
+	if( x < 1) 0
+	else{
+		if(x <= 1) salida
+		else{
+			var l = calculaPrimos(List.tabulate(10)(n => n+2+(10*veces)))
+			var encontrado = false
+			var cant = 0
+			while(cant < l.length & !encontrado){
+				if(x%l(cant) == 0) encontrado = true
+				else cant += 1
+			}
+			if(encontrado) euler3_2(x/l(cant), l(cant))
+			else euler3_2(x, 1, veces+1)
+		}
 	}
-
-	var x1 = x
-	if(encontrado) x1 = x/lPrimos(inicio)
-	println(x1)
-	var cant = 1
-	var l: List[Int] = List()
-	
-	while(cant <= x1)
-	{
-		if(x % cant == 0) l = l :+ cant
-		cant += 1
-	}
-
-	//Aqui ya esta la mitad hecha
-	
-	var l2: List[Int] = List()
-	//Como solo cojo 1
-	//for(y <- l) if(x/y > l.reverse.head) l2 = (x/y).toInt :: l2
-
-	l.length match{
-		case 0 => l
-		case _ => if( x/l.head > l.reverse.head) l2 = (x/l.head).toInt :: l2
-	}
-	
-	l = l ++ l2
-	l
 }
 /* Salida:
-scala> divisores2(345)
-115.0
-val res0: List[Int] = List(1, 3, 5, 15, 23, 69, 115, 345)
+scala> euler3_2(13195)
+val res12: Double = 29.0
 
-scala> divisores2(3)
-1.0
-val res1: List[Int] = List(1, 3)
+scala> euler3_2(600851475143.0)
+val res13: Double = 6857.0
 
-scala> divisores2(0)
-0.0
-val res2: List[Int] = List()
+scala> euler3_2(1)
+val res3: Double = 1.0
+
+scala> euler3_2(0)
+val res4: Double = 0.0
+
+scala> euler3_2(-2)
+val res5: Double = 0.0
+
+scala> euler3_2(4)
+val res6: Double = 2.0
 */
+
 
 
 def divisores(x: Double) = {

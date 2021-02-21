@@ -39,10 +39,6 @@ def calculaHash(l: List[Int]) = {
 	var devolver = 0
 	var cant = 0
 	var l2 = Listado.take(longitud).reverse
-	/*(l, l2).zipped.map{
-		(x,y) => devolver += x*y
-	}*/
-	//println(l2)
 	while(cant < l2.length){
 		var x = l(cant)
 		var y = l2(cant)
@@ -61,3 +57,4 @@ val res2: Int = 54
 scala> calculaHash(List.tabulate(30)(n => n))
 val res3: Int = 13876
 */
+

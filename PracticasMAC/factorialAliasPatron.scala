@@ -17,8 +17,21 @@ def factorial(x: Int): Salida = {
 	}
 }
 
-
 /*
-En Scala solo hay alias para tipos de variables
-def factorial(m: Int, x: Int = (m-1)):
+El patron introducido es un objeto que sera la salida
+
+scala> factorial(23)
+val res4: Salida = Factorial: 862453760
+
+scala> factorial(2)
+val res5: Salida = Factorial: 2
+
+scala> factorial(5)
+val res6: Salida = Factorial: 120
+
+scala> factorial(0)
+val res7: Salida = Factorial: 1
+
+scala> factorial(-1)
+val res8: Salida = Error: 0
 */
