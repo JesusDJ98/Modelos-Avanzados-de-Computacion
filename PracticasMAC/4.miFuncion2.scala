@@ -28,6 +28,8 @@ val res32: List[List[Double]] = List(List(2.0, 3.0, 4.0, 2.0))
 */
 
 
+
+
 //Funciones de Orden superior
 def miFuncion22(l: List[Double => Double], c: List[Double]) = {
 	var devolver: List[Any] = List()
@@ -43,6 +45,8 @@ def miFuncion22(l: List[Double => Double], c: List[Double]) = {
 scala> miFuncion22(List(_*3, _+2, math.pow(_,2)), List(2,3,4,5))
 val res43: List[Any] = List(List(6.0, 9.0, 12.0, 15.0), List(4.0, 5.0, 6.0, 7.0), List(4.0, 9.0, 16.0, 25.0))
 */
+
+
 
 
 

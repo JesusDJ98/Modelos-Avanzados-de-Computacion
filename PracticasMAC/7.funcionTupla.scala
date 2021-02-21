@@ -31,6 +31,10 @@ val res136: Any = 8.0
 */
 
 
+
+
+
+
 //Trabajando de forma funcional
 def funcionTupla2(f1: Double => Double, x: Double, f2: Double => Double) = f1(x) + f2(x)
 def funcionTupla3(f1: Double => Double, x: Double, f2: Double => Double) = f1(f2(x))
@@ -41,6 +45,11 @@ val res92: Double = 15.0
 scala> funcionTupla3(_*2, 4, _+3)
 val res94: Double = 14.0
 */
+
+
+
+
+
 
 //Trabajando de forma funcional con tuplas
 def funcionTupla4(a: (Double => Double, Double, Double => Double)) = a._1(a._2) + a._3(a._2)

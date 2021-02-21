@@ -66,6 +66,9 @@ val res24: List[Double] = List(4.0, 6.0, 4.0, 5.0, 32.0)
 */
 
 
+
+
+
 //Funcion de orden superior
 def miFuncion_2(f: Double => Double, c: List[Double]) = {
 	var devolver: List[Any] = List()
@@ -85,10 +88,16 @@ def miFuncion_21(f: Double => Boolean, c: List[Double]) = {
 	for(x <- c) devolver = devolver :+ f(x)
 	devolver		
 }
+def miFuncion_21_2(f: Double => Boolean, c: List[Double]) = c.map(f)
 /*Salida:
 scala> miFuncion_21(_<2, List(-1,2,3,2,345,22,0))
-val res2: List[Any] = List(true, false, false, false, false, false, true)
+val res28: List[Any] = List(true, false, false, false, false, false, true)
+
+scala> miFuncion_21_2(_<2, List(-1,2,3,2,345,22,0))
+val res29: List[Boolean] = List(true, false, false, false, false, false, true)
 */
+
+
 
 
 def miFuncion_22(f: Double => Boolean, c: List[Double]) = {

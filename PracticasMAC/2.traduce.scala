@@ -30,3 +30,8 @@ def traduce(x: Int) = {
 		case _ => "Error"
 	}
 }
+
+/*
+scala> traduce(3)
+val res19: String = C
+*/

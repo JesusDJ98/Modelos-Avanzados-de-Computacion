@@ -6,7 +6,6 @@ def quitaBlancos(x: String) = {
 	}
 	x1
 }
-
 /*
 scala> quitaBlancos(str)
 val res82: String = AAaaBab
@@ -14,6 +13,8 @@ val res82: String = AAaaBab
 scala> str
 val res83: String = AA aa B a b
 */
+
+
 
 def quitaBlancos2(x: List[Any]) = {
 	var x1: List[Any] = List()
@@ -23,7 +24,6 @@ def quitaBlancos2(x: List[Any]) = {
 	}
 	x1
 }
-
 /*
 scala> quitaBlancos2(LB)
 val res62: List[Any] = List(yo, 2, ver)
