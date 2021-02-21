@@ -13,8 +13,6 @@ def miFuncion(l: List[Double], c: List[Double]= List(0.0) )= {
 	}
 	l2
 }
-
-
 /* Salida:
 scala> miFuncion(List(2,2,2,2))
 val res181: List[Double] = List(2.0, 2.0, 2.0, 2.0)

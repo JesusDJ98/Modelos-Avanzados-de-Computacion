@@ -21,6 +21,8 @@ class Entrada(Persona: String, Edad: Int, Telefono: String) {
 		else false
 	}
 
+	def tupla: (String, Int, String) = (name, y, tel)
+
 	override def toString(): String = "(" + name +", "+y+", "+tel+")";
 }
 /*
@@ -89,3 +91,32 @@ val res121: String = No encontrado
 scala> encontrar(List(), (X2.getTel, 23))
 val res122: String = No encontrado
 */
+
+
+
+
+//Aqui trabajo con tuplas tanto en la lista como en el parametro b
+def encontrarIt(l: List[(String, Int, String)], b: (String, Int) ) = {
+	var a: List[Any] = List()
+	l.foreach {
+		case (x,b._2,b._1) =>{
+			println("hola "+x)
+			a = a :+ x
+		}
+		case _ =>
+	}
+	a
+}
+/* Salida:
+scala> Listado
+val res38: List[(String, Int, String)] = List((tu,22,234567890), (tu2,22,234567890), (asa,23,0987654322))
+scala> encontrarIt(Listado, ("234567890",23))
+val res42: List[Any] = List()
+
+scala> encontrarIt(Listado, ("234567890",22))
+hola tu
+hola tu2
+val res43: List[Any] = List(tu, tu2)
+
+*/
+

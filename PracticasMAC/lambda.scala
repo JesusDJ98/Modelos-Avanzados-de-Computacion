@@ -1,4 +1,4 @@
-def suma2(x: Double, y: Double = 1) = x+y
+def suma2(x: Double, y: Double = 0) = x+y
 
 
 /*No es lo que realmente se me pide -> Pero es bastante interesante
@@ -59,4 +59,10 @@ val res33: Double => Double = $Lambda$1100/0x000000010074e040@7a217059
 
 scala> suma21(2)
 val res34: Double => Double = $Lambda$1100/0x000000010074e040@4c914e12
+
+scala> suma22(3)(3)
+val res58: Double = 4.0
+
+scala> suma21(3)(3)
+val res59: Double = 6.0
 */

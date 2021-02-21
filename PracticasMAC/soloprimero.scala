@@ -1,4 +1,7 @@
 def soloprimero(x: Any, y: Any) = x
+//Con evaluacion perezosa
+def soloprimero3(x: Any, y => Any) = x
+
 def soloprimero1(x: String) = x.head
 def soloprimero2(x: List[Any]) = x.head
 
@@ -14,5 +17,11 @@ val res256: Char = w
 
 scala> soloprimero2(List(2,3,4,"yo"))
 val res258: Any = 2
+
+scala> soloprimero3(2,3)
+val res13: Any = 2
+
+scala> soloprimero3(2,"a")
+val res14: Any = 2
 
 */

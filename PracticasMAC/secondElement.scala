@@ -38,3 +38,19 @@ val res250: Any = e
 scala> secondElement3(s3.drop(1))
 val res252: Any = 2
 */
+
+//Con evaluacion perezosa
+
+def secondElement4(x: => Any, y: Any) = y
+/* Salida:
+scala> secondElement4(2,3)
+val res24: Any = 3
+
+scala> secondElement4(2)
+                     ^
+       error: not enough arguments for method secondElement4: (x: => Any, y: Any): Any.
+       Unspecified value parameter y.
+
+scala> secondElement4(2,List(2,3))
+val res26: Any = List(2, 3)
+*/
